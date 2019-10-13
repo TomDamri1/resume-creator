@@ -6,7 +6,7 @@ import './form.css';
 export class UserDetails extends Component {
     static contextType = FormContext;
     handleSubmit = (e) =>{
-        e.preventDefault();
+        e.stopPropagation();
         this.context.functions.setContextState({
             firstName : this.context.firstName,
             lastName : this.context.lastName

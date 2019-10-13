@@ -8,7 +8,7 @@ export class FormProvider extends Component {
         firstName:'',
         lastName:'',
         email:'',
-        title:'',
+        jobTitle:'',
         location:'',
         phoneNumber:'',
         address:'',
