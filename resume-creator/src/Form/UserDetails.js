@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField';
-import FormContext from './FormContext';
 import Button from '@material-ui/core/Button';
 import './form.css';
+import { createBrowserHistory } from 'history'
+import useInfo from '../hooks/useInfo';
 export class UserDetails extends Component {
-    static contextType = FormContext;
+    next = () =>{
+        let _history = createBrowserHistory();
+        _history.push('/form/profile')
+    }
     handleSubmit = (e) =>{
-        e.stopPropagation();
+        e.preventDefault();
         this.context.functions.setContextState({
             firstName : this.context.firstName,
             lastName : this.context.lastName
         })
+        this.next();
     }
     render() {
         return (
