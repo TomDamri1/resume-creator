@@ -4,6 +4,7 @@ import {Route , Switch} from 'react-router-dom';
 import FormBasicDetails from './Form/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/FormCommunicationDetails';
+import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
               }
           />
           <Route 
-              exact path='/form/basicdetails' 
+              exact path='/form/basicDetails' 
               render={()=> 
                   <FormBasicDetails/>
               }
@@ -25,6 +26,12 @@ function App() {
               exact path='/form/CommunicationDetails' 
               render={()=> 
                   <CommunicationDetails/>
+              }
+          />
+          <Route 
+              exact path='/form/BirthAndNationalityDetails' 
+              render={()=> 
+                  <BirthAndNationalityDetails/>
               }
           />
         </Switch> 

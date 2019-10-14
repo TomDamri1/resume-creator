@@ -2,21 +2,12 @@ import React ,{useState , useEffect} from 'react'
 
 function BirthAndNationalityDetails() {
     const [birthAndNationalityDetails , setBirthAndNationalityDetails] = useState({
-        birthDate:'',
+        birthdate:"1994-10-13", //default value
         birthPlace:'',
         nationality:'',
         languages:[],
     });
-    return (
-        <div>
-            
-        </div>
-    )
+    return [birthAndNationalityDetails , setBirthAndNationalityDetails]
 }
 
 export default BirthAndNationalityDetails
-
-
-let handleChange= (e) => {
-    this.setState({[e.target.name] : e.target.value})
-}

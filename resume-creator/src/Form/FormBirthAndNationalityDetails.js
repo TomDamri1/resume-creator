@@ -4,13 +4,13 @@ import Button from '@material-ui/core/Button';
 import './form.css';
 import { createBrowserHistory } from 'history'
 import FormWraper from './FormWraper'
-import CommunicationDetails from '../hooks/CommunicationDetails';
+import BirthAndNationalityDetails from '../hooks/BirthAndNationalityDetails';
 
-function FormCommunicationDetails() {
-    const [info , setInfo] = CommunicationDetails();
+function FormBirthAndNationalityDetails() {
+    const [info , setInfo] = BirthAndNationalityDetails();
     const next = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/CommunicationDetails')
+        _history.push('/form/BirthAndNationalityDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -21,52 +21,49 @@ function FormCommunicationDetails() {
         setInfo({...info , 
             [e.target.name] : e.target.value});
     }
-    const title='Location&Communication Details';
-    const header='Enter your Communication Details'
+    const changeBirthdate = (e) =>{
+        setInfo({...info , 
+            [e.target.name] : e.target.value});
+        console.log(e.target.value)
+    }
+    const title='Birth&Nationality Details';
+    const header='Enter your Birth & Nationality Details'
     return (
         <FormWraper title={title} header={header}>
         <form onSubmit={handleSubmit}>
             <li>
             <TextField
-                name='phoneNumber'
-                id="outlined-phoneNumber"
-                label="Phone Number"
+                name='birthdate'
+                id="birthdate"
+                label="Birthday"
+                type="date"
                 margin="normal"
                 variant="outlined"
-                value={info.phoneNumber}
+                InputLabelProps={{
+                  shrink: true,}}
+                value={info.birthdate}
+                onChange={changeBirthdate}
+            />
+            </li>
+            <li>
+            <TextField
+                name='birthPlace'
+                id="outlined-birthPlace"
+                label="Birthplace"
+                margin="normal"
+                variant="outlined"
+                value={info.birthPlace}
                 onChange={handleChange}
             />
             </li>
             <li>
             <TextField
-                name='country'
-                id="outlined-country"
-                label="Country"
+                name='nationality'
+                id="outlined-nationality"
+                label="Nationality"
                 margin="normal"
                 variant="outlined"
-                value={info.country}
-                onChange={handleChange}
-            />
-            </li>
-            <li>
-            <TextField
-                name='city'
-                id="outlined-city"
-                label="City"
-                margin="normal"
-                variant="outlined"
-                value={info.city}
-                onChange={handleChange}
-            />
-            </li>
-            <li>
-            <TextField
-                name='streetAddress'
-                id="outlined-streetAddress"
-                label="Street Address"
-                margin="normal"
-                variant="outlined"
-                value={info.street}
+                value={info.nationality}
                 onChange={handleChange}
                 style={{paddingBottom:'1.85em',}}
             />
@@ -81,4 +78,4 @@ function FormCommunicationDetails() {
     )
 }
 
-export default FormCommunicationDetails
+export default FormBirthAndNationalityDetails
