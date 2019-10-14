@@ -21,11 +21,6 @@ function FormBirthAndNationalityDetails() {
         setInfo({...info , 
             [e.target.name] : e.target.value});
     }
-    const changeBirthdate = (e) =>{
-        setInfo({...info , 
-            [e.target.name] : e.target.value});
-        console.log(e.target.value)
-    }
     const title='Birth&Nationality Details';
     const header='Enter your Birth & Nationality Details'
     return (
@@ -42,7 +37,7 @@ function FormBirthAndNationalityDetails() {
                 InputLabelProps={{
                   shrink: true,}}
                 value={info.birthdate}
-                onChange={changeBirthdate}
+                onChange={handleChange}
             />
             </li>
             <li>

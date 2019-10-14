@@ -5,6 +5,7 @@ import FormBasicDetails from './Form/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/FormCommunicationDetails';
 import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
+import Skill from './Form/Skills/Skill'
 
 function App() {
   return (
@@ -32,6 +33,12 @@ function App() {
               exact path='/form/BirthAndNationalityDetails' 
               render={()=> 
                   <BirthAndNationalityDetails/>
+              }
+          />
+          <Route 
+              exact path='/tryThings' 
+              render={()=> 
+                  <Skill/>
               }
           />
         </Switch> 
