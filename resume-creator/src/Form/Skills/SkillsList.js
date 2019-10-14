@@ -1,6 +1,7 @@
 import React from 'react'
 import useSkillList from '../../hooks/useSkillList'
 import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
 import Skill from './Skill';
 import uuidv4 from  'uuid/v4';
@@ -13,8 +14,14 @@ function SkillsList(props) {
     const addSkill = ()=>{
         //check here if the last skill is used!
         setSkillList({
-            skills:[skills , <Skill key={uuidv4()}/>],
+            skills:[...skills , <Skill key={uuidv4()}/>],
             indexOfLastSkill : indexOfLastSkill+1
+        })
+    }
+    const removeSkill = ()=>{
+        setSkillList({
+            skills:[...skills.slice(0,indexOfLastSkill)],
+            indexOfLastSkill : indexOfLastSkill-1
         })
     }
     return (
@@ -23,12 +30,17 @@ function SkillsList(props) {
                 {props.title}
             </Typography>
             {skills}
-            <Fab color="primary" aria-label="add"
-                style={{marginTop:'1em' , marginLeft:'25em'}}
-                onClick={addSkill}
+            <div style={{marginTop:'1em' , marginLeft:'18em',}}>
+            <Fab color="primary" aria-label="add" onClick={addSkill}
             >
                 <AddIcon />
             </Fab>
+            <Fab color="secondary" aria-label="delete" onClick={removeSkill}
+                style={{marginLeft:'1em'}}
+            >
+                <DeleteIcon />
+            </Fab>
+            </div>
         </div>
     )
 }

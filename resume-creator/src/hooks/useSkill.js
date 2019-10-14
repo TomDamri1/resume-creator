@@ -6,6 +6,7 @@ function useSkill() {
         level:0,
         used: false,
     });
+    
     useEffect(()=>{
         if(skill.type!== ''){
             setSkill({

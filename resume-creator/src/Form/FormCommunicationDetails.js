@@ -10,7 +10,7 @@ function FormCommunicationDetails() {
     const [info , setInfo] = CommunicationDetails();
     const next = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/CommunicationDetails')
+        _history.push('/form/BirthAndNationalityDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

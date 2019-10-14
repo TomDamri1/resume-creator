@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import bg from './wraperBG.svg'
 
 
 export const useStyles = makeStyles({
