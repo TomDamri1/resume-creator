@@ -6,6 +6,7 @@ import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/FormCommunicationDetails';
 import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
 import Skill from './Form/Skills/Skill'
+import SkillsList from './Form/Skills/SkillsList';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route 
               exact path='/tryThings' 
               render={()=> 
-                  <Skill/>
+                  <SkillsList/>
               }
           />
         </Switch> 

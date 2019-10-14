@@ -5,6 +5,7 @@ import './form.css';
 import { createBrowserHistory } from 'history'
 import FormWraper from './FormWraper'
 import BirthAndNationalityDetails from '../hooks/BirthAndNationalityDetails';
+import SkillsList from './Skills/SkillsList';
 
 function FormBirthAndNationalityDetails() {
     const [info , setInfo] = BirthAndNationalityDetails();
@@ -62,6 +63,9 @@ function FormBirthAndNationalityDetails() {
                 onChange={handleChange}
                 style={{paddingBottom:'1.85em',}}
             />
+            </li>
+            <li>
+                <SkillsList title='Languages'/>
             </li>
             <li>
                 <Button type='submit' variant="contained" color="primary">
