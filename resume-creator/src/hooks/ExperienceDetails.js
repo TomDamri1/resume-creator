@@ -1,4 +1,4 @@
-import React ,{useState , useEffect} from 'react'
+import React ,{useState} from 'react'
 
 function ExperienceDetails() {
     const [experienceDetails , setExperienceDetails] = useState({
@@ -10,16 +10,9 @@ function ExperienceDetails() {
         employmentHistory:[],
         education:[],
     });
-    return (
-        <div>
-            
-        </div>
-    )
+    return [experienceDetails , setExperienceDetails]
 }
 
 export default ExperienceDetails
 
 
-let handleChange= (e) => {
-    this.setState({[e.target.name] : e.target.value})
-}

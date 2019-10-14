@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Route , Switch} from 'react-router-dom';
-import UserDetails from './Form/UserDetails';
+import FormBasicDetails from './Form/FormBasicDetails';
 import GetStarted from './Form/GetStarted'
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
               }
           />
           <Route 
-              exact path='/form/userdetails' 
+              exact path='/form/basicdetails' 
               render={()=> 
-                  <UserDetails/>
+                  <FormBasicDetails/>
               }
           />
         </Switch> 

@@ -7,16 +7,8 @@ function BasicDetails() {
             email:'',
             jobTitle:'',
         });
-    return (
-        <div>
-            
-        </div>
-    )
+    return [basicDetails , setBasicDetails]
 }
 
 export default BasicDetails
 
-
-let handleChange= (e) => {
-    this.setState({[e.target.name] : e.target.value})
-}

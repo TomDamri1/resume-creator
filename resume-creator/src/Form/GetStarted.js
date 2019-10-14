@@ -6,53 +6,30 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { createBrowserHistory } from 'history'
 import {Link} from 'react-router-dom'
+import FormWraper from './FormWraper'
 
-const styles = {
-    card: {
-      minWidth: 275,
-      maxWidth: 675,
-      margin: 'auto',
-      marginTop: '4em',
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-    header:{
-        marginBottom: '3rem'        
-    },
-    link:{
-        textDecoration: 'none'
-    },
-  };
 
-export class GetStarted extends Component {
-    getStarted = () =>{
+function GetStarted() {
+    const getStarted = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/userdetails')
+        _history.push('/form/basicdetails')
     }
-    render() {
-        const { classes } = this.props;
-        return (
-            <Card className={classes.card}>
-                <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    Tom's Resume Creator
-                </Typography>
-                <Typography className={classes.header} variant="h5" component="h2">
-                    Create your Resume free of charge!
-                </Typography>
-                <Link to='/form/userdetails' className={classes.link}>
-                    <Button onClick={this.getStarted} color='primary' size="small">
-                            Get Started!
-                    </Button>
-                </Link>
-                </CardContent>
-            </Card>
-        )
-    }
+    const header = "Tom's Resume Creator";
+    const instructions = "Upgrade your Resume free of charge!"
+    
+    return (       
+        <FormWraper 
+            header={header}
+            instructions={instructions}
+        >
+        <Link to='/form/basicdetails' style={{textDecoration: 'none'}}>
+            <Button onClick={getStarted} color='primary' size="small">
+                    Get Started!
+            </Button>
+        </Link>
+        </FormWraper>
+    )
 }
 
-export default withStyles(styles)(GetStarted)
+
+export default GetStarted;
