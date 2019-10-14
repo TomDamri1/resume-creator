@@ -5,10 +5,11 @@ import './form.css';
 import { createBrowserHistory } from 'history'
 import BasicDetails from '../hooks/BasicDetails';
 import FormWraper from './FormWraper'
+import { Link } from '@material-ui/core';
+import CommunicationDetails from '../hooks/CommunicationDetails';
 
-
-function FormBasicDetails (){
-    const [info , setInfo] = BasicDetails();
+function FormCommunicationDetails() {
+    const [info , setInfo] = CommunicationDetails();
     const next = () =>{
         let _history = createBrowserHistory();
         _history.push('/form/CommunicationDetails')
@@ -22,54 +23,54 @@ function FormBasicDetails (){
         setInfo({...info , 
             [e.target.name] : e.target.value});
     }
-    const title='Basic Details';
-    const header='Enter your Basic Details'
+    const title='Location&Communication Details';
+    const header='Enter your Communication Details'
     return (
         <FormWraper title={title} header={header}>
         <form onSubmit={handleSubmit}>
             <li>
             <TextField
-                name='firstName'
-                id="outlined-name"
-                label="First Name"
+                name='phoneNumber'
+                id="outlined-phoneNumber"
+                label="Phone Number"
                 margin="normal"
                 variant="outlined"
-                value={info.firstName}
+                value={info.phoneNumber}
                 onChange={handleChange}
             />
             </li>
             <li>
             <TextField
-                name='lastName'
-                id="outlined-name"
-                label="Last Name"
+                name='country'
+                id="outlined-country"
+                label="Country"
                 margin="normal"
                 variant="outlined"
-                value={info.lastName}
+                value={info.country}
                 onChange={handleChange}
             />
             </li>
             <li>
             <TextField
-                name='email'
-                id="outlined-name"
-                label="Email"
+                name='city'
+                id="outlined-city"
+                label="City"
                 margin="normal"
                 variant="outlined"
-                value={info.email}
+                value={info.city}
                 onChange={handleChange}
             />
             </li>
             <li>
             <TextField
-                name='jobTitle'
-                id="outlined-name"
-                label="Job Title"
+                name='streetAddress'
+                id="outlined-streetAddress"
+                label="Street Address"
                 margin="normal"
                 variant="outlined"
-                value={info.jobTitle}
+                value={info.street}
                 onChange={handleChange}
-                style={{paddingBottom:'1.85em'}}
+                style={{paddingBottom:'1.85em',}}
             />
             </li>
             <li>
@@ -82,5 +83,4 @@ function FormBasicDetails (){
     )
 }
 
-
-export default FormBasicDetails
+export default FormCommunicationDetails

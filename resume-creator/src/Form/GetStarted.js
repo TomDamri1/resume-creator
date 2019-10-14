@@ -12,17 +12,17 @@ import FormWraper from './FormWraper'
 function GetStarted() {
     const getStarted = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/basicdetails')
+        _history.push('/form/basicDetails')
     }
-    const header = "Tom's Resume Creator";
-    const instructions = "Upgrade your Resume free of charge!"
+    const title = "Tom's Resume Creator";
+    const header = "Upgrade your Resume free of charge!"
     
     return (       
         <FormWraper 
+            title={title}
             header={header}
-            instructions={instructions}
         >
-        <Link to='/form/basicdetails' style={{textDecoration: 'none'}}>
+        <Link to='/form/basicDetails' style={{textDecoration: 'none'}}>
             <Button onClick={getStarted} color='primary' size="small">
                     Get Started!
             </Button>

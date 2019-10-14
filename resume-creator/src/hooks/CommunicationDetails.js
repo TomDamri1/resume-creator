@@ -1,21 +1,14 @@
-import React ,{useState , useEffect} from 'react'
+import React ,{useState } from 'react'
 
 function CommunicationDetails() {
     const [communicationDetails , setCommunicationDetails] = useState({
-            location:'',
             phoneNumber:'',
-            address:'',
-        });
-    return (
-        <div>
+            country:'',
+            city:'',
+            streetAddress:'',
             
-        </div>
-    )
+        });
+    return [communicationDetails , setCommunicationDetails]
 }
 
 export default CommunicationDetails
-
-
-let handleChange= (e) => {
-    this.setState({[e.target.name] : e.target.value})
-}
