@@ -7,11 +7,12 @@ import BasicDetails from '../hooks/BasicDetails';
 import FormWraper from './FormWraper'
 
 
-function FormBasicDetails (){
+function FormBasicDetails (props){
     const [info , setInfo] = BasicDetails();
     const next = () =>{
-        let _history = createBrowserHistory();
-        _history.push('/form/CommunicationDetails')
+        // let _history = createBrowserHistory();
+        // _history.push('/form/CommunicationDetails')
+        props.history.push('/form/CommunicationDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

@@ -5,10 +5,9 @@ import {Link} from 'react-router-dom'
 import FormWraper from './FormWraper'
 
 
-function GetStarted() {
+function GetStarted(props) {
     const getStarted = () =>{
-        let _history = createBrowserHistory();
-        _history.push('/form/basicDetails')
+        props.history.push('/form/basicDetails')
     }
     const title = "Tom's Resume Creator";
     const header = "Upgrade your Resume free of charge!"

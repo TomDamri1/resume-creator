@@ -5,11 +5,11 @@ import { createBrowserHistory } from 'history'
 import FormWraper from './FormWraper'
 import EmploymentHistory from '../hooks/EmploymentHistory';
 
-function FormEmploymentHistory() {
+function FormEmploymentHistory(props) {
     const [info , setInfo] = EmploymentHistory();
     const next = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/ExperienceDetails')
+        props.history.push('/form/ExperienceDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

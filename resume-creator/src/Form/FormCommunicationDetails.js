@@ -6,11 +6,11 @@ import { createBrowserHistory } from 'history'
 import FormWraper from './FormWraper'
 import CommunicationDetails from '../hooks/CommunicationDetails';
 
-function FormCommunicationDetails() {
+function FormCommunicationDetails(props) {
     const [info , setInfo] = CommunicationDetails();
     const next = () =>{
-        let _history = createBrowserHistory();
-        _history.push('/form/BirthAndNationalityDetails')
+        
+        props.history.push('/form/BirthAndNationalityDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

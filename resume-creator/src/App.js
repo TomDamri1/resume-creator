@@ -5,9 +5,7 @@ import FormBasicDetails from './Form/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/FormCommunicationDetails';
 import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
-import SkillsList from './Form/Skills/SkillsList';
 import ExperienceDetails from './Form/FormEmploymentHistory';
-import WorkPlace from './Form/WorkPlaces/WorkPlace';
 import WorkPlacesList from './Form/WorkPlaces/WorkPlacesList';
 
 function App() {
@@ -16,32 +14,32 @@ function App() {
         <Switch>
           <Route
               exact path='/' 
-              render={()=> 
-                <GetStarted/>
+              render={(props)=> 
+                <GetStarted {...props}/>
               }
           />
           <Route 
               exact path='/form/basicDetails' 
-              render={()=> 
-                  <FormBasicDetails/>
+              render={(props)=> 
+                  <FormBasicDetails {...props}/>
               }
           />
           <Route 
               exact path='/form/CommunicationDetails' 
-              render={()=> 
-                  <CommunicationDetails/>
+              render={(props)=> 
+                  <CommunicationDetails {...props}/>
               }
           />
           <Route 
               exact path='/form/BirthAndNationalityDetails' 
-              render={()=> 
-                  <BirthAndNationalityDetails/>
+              render={(props)=> 
+                  <BirthAndNationalityDetails {...props}/>
               }
           />
            <Route 
               exact path='/form/EmploymentHistory' 
-              render={()=> 
-                  <ExperienceDetails/>
+              render={(props)=> 
+                  <ExperienceDetails {...props}/>
               }
           />
           <Route 
