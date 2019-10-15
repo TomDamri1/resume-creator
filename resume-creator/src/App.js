@@ -6,6 +6,9 @@ import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/FormCommunicationDetails';
 import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
 import SkillsList from './Form/Skills/SkillsList';
+import ExperienceDetails from './Form/FormEmploymentHistory';
+import WorkPlace from './Form/WorkPlaces/WorkPlace';
+import WorkPlacesList from './Form/WorkPlaces/WorkPlacesList';
 
 function App() {
   return (
@@ -35,10 +38,16 @@ function App() {
                   <BirthAndNationalityDetails/>
               }
           />
+           <Route 
+              exact path='/form/EmploymentHistory' 
+              render={()=> 
+                  <ExperienceDetails/>
+              }
+          />
           <Route 
               exact path='/tryThings' 
               render={()=> 
-                  <SkillsList/>
+                  <WorkPlacesList/>
               }
           />
         </Switch> 

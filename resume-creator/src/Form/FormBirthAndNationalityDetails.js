@@ -11,7 +11,7 @@ function FormBirthAndNationalityDetails() {
     const [info , setInfo] = BirthAndNationalityDetails();
     const next = () =>{
         let _history = createBrowserHistory();
-        _history.push('/form/BirthAndNationalityDetails')
+        _history.push('/form/EmploymentHistory')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
