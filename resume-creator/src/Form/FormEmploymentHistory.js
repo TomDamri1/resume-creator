@@ -1,15 +1,27 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import Button from '@material-ui/core/Button';
 import './form.css';
-import { createBrowserHistory } from 'history'
 import FormWraper from './FormWraper'
-import EmploymentHistory from '../hooks/EmploymentHistory';
 import WorkPlace from './WorkPlaces/WorkPlace'
+import uuidv4 from 'uuid/v4';
+import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 function FormEmploymentHistory(props) {
-    const [info , setInfo] = EmploymentHistory();
+    const firstId='firstId';
+    const [info , setInfo] = useState({
+        firstId : {
+            title : undefined,
+            place : '',
+            start : '',
+            end : '',
+        },
+    });
+    const [WorkPlacesCounter , setWorkPlacesCounter] = useState([
+        firstId,
+    ]);
     const next = () =>{
-        let _history = createBrowserHistory();
         props.history.push('/form/ExperienceDetails')
     }
     const handleSubmit = (e) =>{
@@ -17,9 +29,21 @@ function FormEmploymentHistory(props) {
         console.log(info);
         next();
     }
-    const handleChange= (e) => {
-        setInfo({...info , 
-            [e.target.name] : e.target.value});
+    const addNewWorkPlace = (id) =>{
+        setWorkPlacesCounter([...WorkPlacesCounter , id ]);
+    }
+    const removeWorkPlace = () =>{
+        let id = WorkPlacesCounter[WorkPlacesCounter.length-1]
+        let tempWorkPlacesCounter =WorkPlacesCounter;
+        tempWorkPlacesCounter.pop();
+        let tempInfo = info;
+        delete tempInfo[id];
+        setInfo({...tempInfo});
+        setWorkPlacesCounter([...tempWorkPlacesCounter]);
+    }
+    const handleTypeChange = (id , obj) => {
+        setInfo({...info , [id] : obj });
+        console.log(info);
     }
     const title='Employment History Details';
     const header='Enter your Employment History Details'
@@ -28,7 +52,21 @@ function FormEmploymentHistory(props) {
         <FormWraper title={title} header={header} width={width}>
         <form onSubmit={handleSubmit}>
             <li>
-                <WorkPlace/>
+                {
+                    WorkPlacesCounter.map(place =>(
+                        <WorkPlace key={place} id={place} handleTypeChange={handleTypeChange}/> 
+                    ))
+                }
+            </li>
+            <li>
+            <div className='buttons-div' style={{marginLeft:500 , marginTop:10}}>
+                    <IconButton onClick={()=>addNewWorkPlace(uuidv4())}>
+                        <AddIcon/>
+                    </IconButton>
+                    <IconButton onClick={removeWorkPlace}>
+                        <RemoveIcon/>
+                    </IconButton>
+                </div>
             </li>
             <li>
                 <Button type='submit' variant="contained" color="primary">

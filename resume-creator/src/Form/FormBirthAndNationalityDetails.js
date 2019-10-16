@@ -2,20 +2,14 @@ import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import './form.css';
-import { createBrowserHistory } from 'history'
-import useSkillList from '../hooks/useSkillList';
 import FormWraper from './FormWraper'
 import BirthAndNationalityDetails from '../hooks/BirthAndNationalityDetails';
-import SkillsList from './Skills/SkillsList';
-import useSkill from '../hooks/useSkill';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-import Fab from '@material-ui/core/Fab';
 import Skill from './Skills/Skill';
 import uuidv4 from  'uuid/v4';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import { timeout } from 'q';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 function FormBirthAndNationalityDetails(props) {
     const [lanCounter , setlanCounter] = useState([])
@@ -69,13 +63,8 @@ function FormBirthAndNationalityDetails(props) {
         tempLanCounter.pop();
         let tempLanguages = Languages;
         delete tempLanguages[id];
-        
-        console.log(tempLanCounter);
-        console.log(tempLanguages);
         setLanguages({...tempLanguages});
         setlanCounter([...tempLanCounter]);
-        console.log(lanCounter);
-        console.log(Languages);
     }
     const title='Birth&Nationality Details';
     const header='Enter your Birth & Nationality Details'
