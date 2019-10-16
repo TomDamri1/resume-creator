@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextField, Typography } from '@material-ui/core';
 import useWorkPlace from '../../hooks/useWorkPlace';
-import { maxWidth } from '@material-ui/system';
 
 function WorkPlace(props) {
     const [workPlace , setWorkPlace] = useWorkPlace();

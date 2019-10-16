@@ -123,6 +123,9 @@ function FormBirthAndNationalityDetails(props) {
                 <Typography variant='h6'>
                     Languages
                 </Typography>
+                <Typography variant='caption'>
+                    Name your languages and choose the level of control.
+                </Typography>
                 {
                     lanCounter.map(id=>(
                         <Skill id={id} 

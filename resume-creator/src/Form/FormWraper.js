@@ -7,7 +7,7 @@ import {useStyles} from './Styles/FormWraperStyles';
 export default function FormWraper(props) {
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} style={{maxWidth : props.width? props.width : undefined}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
             {props.title}
