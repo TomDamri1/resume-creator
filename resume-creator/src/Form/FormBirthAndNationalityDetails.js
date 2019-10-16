@@ -9,11 +9,12 @@ import BirthAndNationalityDetails from '../hooks/BirthAndNationalityDetails';
 import SkillsList from './Skills/SkillsList';
 import useSkill from '../hooks/useSkill';
 import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
+import RemoveIcon from '@material-ui/icons/Remove';
 import Fab from '@material-ui/core/Fab';
 import Skill from './Skills/Skill';
 import uuidv4 from  'uuid/v4';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
 import { timeout } from 'q';
 
 function FormBirthAndNationalityDetails(props) {
@@ -44,14 +45,16 @@ function FormBirthAndNationalityDetails(props) {
             level:0,
         }})
         setlanCounter([...lanCounter,id])
+        console.log(id);
     }
     const onTypeChange =(id,type) =>{
         setLanguages({...Languages, [id] : {
             ...Languages[id],
             type:type,
-            
         }})
         setInfo({...info , languages:{...Languages}})
+        console.log(type)
+        console.log(info.languages)
     }
     const onLevelChange =(id,level) =>{
         setLanguages({...Languages, [id] : {
@@ -60,7 +63,20 @@ function FormBirthAndNationalityDetails(props) {
         }})
         setInfo({...info , languages:{...Languages}})
     }
-    console.log(info)
+    const removeLanguage = () =>{
+        let id = lanCounter[lanCounter.length-1]
+        let tempLanCounter =lanCounter;
+        tempLanCounter.pop();
+        let tempLanguages = Languages;
+        delete tempLanguages[id];
+        
+        console.log(tempLanCounter);
+        console.log(tempLanguages);
+        setLanguages({...tempLanguages});
+        setlanCounter([...tempLanCounter]);
+        console.log(lanCounter);
+        console.log(Languages);
+    }
     const title='Birth&Nationality Details';
     const header='Enter your Birth & Nationality Details'
     return (
@@ -109,15 +125,25 @@ function FormBirthAndNationalityDetails(props) {
                 </Typography>
                 {
                     lanCounter.map(id=>(
-                        <Skill id={id} onTypeChange={onTypeChange} onLevelChange={onLevelChange}/>
+                        <Skill id={id} 
+                            key={id}
+                            onTypeChange={onTypeChange} 
+                            onLevelChange={onLevelChange}
+                            removeLanguage={removeLanguage}
+                        />
                     ))
                 }
                 
             </li>
             <li>
-                <Button onClick={()=>addLanguage(uuidv4())}>
-                    +
-                </Button>
+                <div className='buttons-div' style={{marginLeft:200 , marginTop:10}}>
+                    <IconButton onClick={()=>addLanguage(uuidv4())}>
+                        <AddIcon/>
+                    </IconButton>
+                    <IconButton onClick={removeLanguage}>
+                        <RemoveIcon/>
+                    </IconButton>
+                </div>
             </li>
             <li>
                 <Button type='submit' variant="contained" color="primary">

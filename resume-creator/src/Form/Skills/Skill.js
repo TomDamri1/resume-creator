@@ -2,22 +2,18 @@ import React ,{useEffect} from 'react';
 import Slider from '@material-ui/core/Slider';
 import { TextField, Button } from '@material-ui/core';
 import useSkill from '../../hooks/useSkill';
-
 function Skill(props) {
     const [skill , setSkill] = useSkill();
     const handleChange= (e) => {
         setSkill({...skill , 
             [e.target.name] : e.target.value,});
         props.onTypeChange(props.id , e.target.value)
+        console.log(e.target.value)
     }
     const handleLevelChange = (e,val) => {
         setSkill({...skill , 
             level : val});
         props.onLevelChange(props.id , val)
-    }
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        props.addSkill(skill)
     }
     return (
         <div>
@@ -41,6 +37,7 @@ function Skill(props) {
                 valueLabelDisplay='on'
                 style={{marginTop:'30px', marginLeft:'15px', width: 200}}
             />
+            
             
         </div>
     )
