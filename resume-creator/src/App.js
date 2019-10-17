@@ -4,9 +4,10 @@ import {Route , Switch} from 'react-router-dom';
 import FormBasicDetails from './Form/BasicDetails/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/CommunicationDetails/FormCommunicationDetails';
-import BirthAndNationalityDetails from './Form/BirthAndNationality/FormBirthAndNationalityDetails'
+import BirthAndNationalityDetails from './Form/BirthAndNationality/FormBirthAndNationalityDetails';
 import ExperienceDetails from './Form/EmploymentHistory/FormEmploymentHistory';
-import EducationDetails from './Form/Education/FormEducationDetails'
+import EducationDetails from './Form/Education/FormEducationDetails';
+import Skills from './Form/Skills/FormSkills';
 
 function App() {
   return (
@@ -46,6 +47,12 @@ function App() {
               exact path='/form/EducationDetails' 
               render={(props)=> 
                   <EducationDetails {...props}/>
+              }
+          />
+          <Route 
+              exact path='/form/Skills' 
+              render={(props)=> 
+                  <Skills {...props}/>
               }
           />
           <Route 
