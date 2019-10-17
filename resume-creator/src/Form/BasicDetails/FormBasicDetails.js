@@ -1,10 +1,8 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import './form.css';
-import { createBrowserHistory } from 'history'
-import BasicDetails from '../hooks/BasicDetails';
-import FormWraper from './FormWraper'
+import BasicDetails from './hooks/BasicDetails';
+import FormWraper from '../FormWraper'
 
 
 function FormBasicDetails (props){

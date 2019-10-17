@@ -11,6 +11,7 @@ export const useStyles = makeStyles({
         textAlign: 'left',
         alignContent: 'center',
         paddingLeft: '4em',
+        listStyleType: 'none',
     },
     title: {
       fontSize: 14,

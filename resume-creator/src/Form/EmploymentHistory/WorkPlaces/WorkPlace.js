@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField, Typography } from '@material-ui/core';
-import useWorkPlace from '../../hooks/useWorkPlace';
+import useWorkPlace from '../hooks/useWorkPlace';
 
 function WorkPlace(props) {
     const [workPlace , setWorkPlace] = useWorkPlace();

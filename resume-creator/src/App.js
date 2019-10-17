@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import {Route , Switch} from 'react-router-dom';
-import FormBasicDetails from './Form/FormBasicDetails';
+import FormBasicDetails from './Form/BasicDetails/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
-import CommunicationDetails from './Form/FormCommunicationDetails';
-import BirthAndNationalityDetails from './Form/FormBirthAndNationalityDetails'
-import ExperienceDetails from './Form/FormEmploymentHistory';
-import WorkPlacesList from './Form/WorkPlaces/WorkPlacesList';
+import CommunicationDetails from './Form/CommunicationDetails/FormCommunicationDetails';
+import BirthAndNationalityDetails from './Form/BirthAndNationality/FormBirthAndNationalityDetails'
+import ExperienceDetails from './Form/EmploymentHistory/FormEmploymentHistory';
+import EducationDetails from './Form/Education/FormEducationDetails'
 
 function App() {
   return (
@@ -43,9 +43,15 @@ function App() {
               }
           />
           <Route 
+              exact path='/form/EducationDetails' 
+              render={(props)=> 
+                  <EducationDetails {...props}/>
+              }
+          />
+          <Route 
               exact path='/tryThings' 
-              render={()=> 
-                  <WorkPlacesList/>
+              render={(props)=> 
+                 <h1>trying</h1>
               }
           />
         </Switch> 

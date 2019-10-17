@@ -1,7 +1,6 @@
 import React ,{useState}from 'react'
 import Button from '@material-ui/core/Button';
-import './form.css';
-import FormWraper from './FormWraper'
+import FormWraper from '../FormWraper'
 import WorkPlace from './WorkPlaces/WorkPlace'
 import uuidv4 from 'uuid/v4';
 import IconButton from '@material-ui/core/IconButton';
@@ -22,7 +21,7 @@ function FormEmploymentHistory(props) {
         firstId,
     ]);
     const next = () =>{
-        props.history.push('/form/ExperienceDetails')
+        props.history.push('/form/EducationDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

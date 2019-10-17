@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import './form.css';
-import FormWraper from './FormWraper'
-import BirthAndNationalityDetails from '../hooks/BirthAndNationalityDetails';
-import Skill from './Skills/Skill';
+import FormWraper from '../FormWraper'
+import BirthAndNationalityDetails from './hooks/BirthAndNationalityDetails';
+import Skill from '../Skills/Skill';
 import uuidv4 from  'uuid/v4';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';

@@ -1,5 +1,5 @@
 import React from 'react'
-import useWorkPlacesList from '../../hooks/useWorkPlacesList'
+import useWorkPlacesList from '../hooks/useWorkPlacesList'
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';

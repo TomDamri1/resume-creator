@@ -1,10 +1,8 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import './form.css';
-import { createBrowserHistory } from 'history'
-import FormWraper from './FormWraper'
-import CommunicationDetails from '../hooks/CommunicationDetails';
+import FormWraper from '../FormWraper'
+import CommunicationDetails from './hooks/CommunicationDetails';
 
 function FormCommunicationDetails(props) {
     const [info , setInfo] = CommunicationDetails();
