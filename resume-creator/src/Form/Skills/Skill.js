@@ -1,6 +1,6 @@
-import React ,{useEffect} from 'react';
+import React from 'react';
 import Slider from '@material-ui/core/Slider';
-import { TextField, Button } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import useSkill from '../../hooks/useSkill';
 function Skill(props) {
     const [skill , setSkill] = useSkill();
@@ -16,7 +16,7 @@ function Skill(props) {
         props.onLevelChange(props.id , val)
     }
     return (
-        <div>
+        <div style={{marginTop:'1em'}}>
             <TextField
                 name='type'
                 id="outlined-type"

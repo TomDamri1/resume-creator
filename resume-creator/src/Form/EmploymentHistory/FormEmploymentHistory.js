@@ -6,6 +6,8 @@ import uuidv4 from 'uuid/v4';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import {card_lg} from '../../consts';
+import AddRemoveButtonBar from '../AddRemoveButtonBar';
 
 function FormEmploymentHistory(props) {
     const firstId='firstId';
@@ -46,9 +48,8 @@ function FormEmploymentHistory(props) {
     }
     const title='Employment History Details';
     const header='Enter your Employment History Details'
-    const width = 800;
     return (
-        <FormWraper title={title} header={header} width={width}>
+        <FormWraper title={title} header={header} width={card_lg}>
         <form onSubmit={handleSubmit}>
             <li>
                 {
@@ -58,14 +59,12 @@ function FormEmploymentHistory(props) {
                 }
             </li>
             <li>
-            <div className='buttons-div' style={{marginLeft:500 , marginTop:10}}>
-                    <IconButton onClick={()=>addNewWorkPlace(uuidv4())}>
-                        <AddIcon/>
-                    </IconButton>
-                    <IconButton onClick={removeWorkPlace}>
-                        <RemoveIcon/>
-                    </IconButton>
-                </div>
+                <AddRemoveButtonBar 
+                    addFunction={()=>addNewWorkPlace(uuidv4())}
+                    removeFunction={removeWorkPlace}
+                    marginLeft={500} 
+                    marginTop={10}
+                />
             </li>
             <li>
                 <Button type='submit' variant="contained" color="primary">

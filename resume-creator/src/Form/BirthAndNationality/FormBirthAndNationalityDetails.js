@@ -6,9 +6,7 @@ import BirthAndNationalityDetails from './hooks/BirthAndNationalityDetails';
 import Skill from '../Skills/Skill';
 import uuidv4 from  'uuid/v4';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
+import AddRemoveButtonBar from '../AddRemoveButtonBar';
 
 function FormBirthAndNationalityDetails(props) {
     const [lanCounter , setlanCounter] = useState([])
@@ -111,12 +109,13 @@ function FormBirthAndNationalityDetails(props) {
                 <Typography variant='h6'>
                     Languages
                 </Typography>
-                <Typography variant='caption'>
+                <Typography variant='caption' >
                     Name your languages and choose the level of control.
                 </Typography>
                 {
                     lanCounter.map(id=>(
-                        <Skill id={id} 
+                        <Skill 
+                            id={id} 
                             key={id}
                             onTypeChange={onTypeChange} 
                             onLevelChange={onLevelChange}
@@ -127,14 +126,12 @@ function FormBirthAndNationalityDetails(props) {
                 
             </li>
             <li>
-                <div className='buttons-div' style={{marginLeft:200 , marginTop:10}}>
-                    <IconButton onClick={()=>addLanguage(uuidv4())}>
-                        <AddIcon/>
-                    </IconButton>
-                    <IconButton onClick={removeLanguage}>
-                        <RemoveIcon/>
-                    </IconButton>
-                </div>
+                <AddRemoveButtonBar 
+                    addFunction={()=>addLanguage(uuidv4())}
+                    removeFunction={removeLanguage}
+                    marginLeft={500} 
+                    marginTop={10}
+                />
             </li>
             <li>
                 <Button type='submit' variant="contained" color="primary">
@@ -147,3 +144,15 @@ function FormBirthAndNationalityDetails(props) {
 }
 
 export default FormBirthAndNationalityDetails
+
+/*
+<div className='buttons-div' style={{marginLeft:200 , marginTop:10}}>
+                    <IconButton onClick={()=>addLanguage(uuidv4())}>
+                        <AddIcon/>
+                    </IconButton>
+                    <IconButton onClick={removeLanguage}>
+                        <RemoveIcon/>
+                    </IconButton>
+                </div>
+
+                */

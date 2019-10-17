@@ -8,6 +8,7 @@ import BirthAndNationalityDetails from './Form/BirthAndNationality/FormBirthAndN
 import ExperienceDetails from './Form/EmploymentHistory/FormEmploymentHistory';
 import EducationDetails from './Form/Education/FormEducationDetails';
 import Skills from './Form/Skills/FormSkills';
+import Profile from './Form/Profile/FormProfile';
 
 function App() {
   return (
@@ -53,6 +54,12 @@ function App() {
               exact path='/form/Skills' 
               render={(props)=> 
                   <Skills {...props}/>
+              }
+          />
+          <Route 
+              exact path='/form/Profile' 
+              render={(props)=> 
+                  <Profile {...props}/>
               }
           />
           <Route 
