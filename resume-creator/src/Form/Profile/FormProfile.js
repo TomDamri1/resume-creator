@@ -4,30 +4,64 @@ import { TextField } from '@material-ui/core';
 import {card_lg} from '../../consts';
 import AddRemoveButtonBar from '../AddRemoveButtonBar';
 import Button from '@material-ui/core/Button';
+import uuidv4 from 'uuid/v4'
+import Station from './Station';
 
-export default function FormProfile() {
+export default function FormProfile(props) {
+    const firstId = 'firstId';
+    const secondId = 'secondId';
     const [info, setInfo] = useState({
         bio:'',
-        stations:['',''],
+        stations:{
+            firstId :'',
+            secondId:'',
+        },
     })
-    const addStation = () =>{
+    const next = () =>{
+        props.history.push('/form/Projects');
+    }
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        next();
+        console.log(info)
+    }
+    const [stationCounter, setStationCounter] = useState([firstId,secondId])
+    const addStation = (id) =>{
+        let tempStationCounter = stationCounter;
         setInfo({
             ...info,
-            stations : [...info.stations,''],
+            stations : {...info.stations, [id] : '' },
         })
+        setStationCounter([
+            ...tempStationCounter , id
+        ])
     }
     const removeStation = () =>{
-        let tempStations = info.stations;
-        tempStations.pop();
+        let id = stationCounter[stationCounter.length-1]
+        let tempstationCounter =stationCounter;
+        tempstationCounter.pop();
+        let tempInfo = info;
+        delete tempInfo.stations[id];
+        setStationCounter([...tempstationCounter]);
+        setInfo({...tempInfo});
+    }
+    const handleMainProfileChange = (e) => {
+        setInfo({...info , 
+            bio : e.target.value});
+    }
+    const handleStationChange = (id,value) =>{
         setInfo({
-            ...info,
-            stations : [...tempStations],
+            ...info , 
+            stations : {...info.stations,
+                [id] : value
+            }
         })
     }
     const title = 'Profile';
     const header = 'Enter your Work Profile and relevant job stations'
     return (
         <FormWraper title={title} header={header} width={card_lg}>
+            <form onSubmit={handleSubmit}>
             <TextField
                 id="outlined-multiline-static"
                 label="Work Profile"
@@ -36,22 +70,15 @@ export default function FormProfile() {
                 margin="normal"
                 variant="outlined"
                 style={{width : 700}}
+                onChange={handleMainProfileChange}
             />
             {
-                info.stations.map((station,index) =>(
-                    <TextField
-                        key={index}
-                        label={`Station #${index+1}`}
-                        multiline
-                        rows="3"
-                        margin="normal"
-                        variant="outlined"
-                        style={{width : 650, marginLeft:50}}
-                    />
+                stationCounter.map((station,index) =>(
+                    <Station id={station} index={index} key={index} handleStationChange={handleStationChange}/>
                 ))
             }
             <AddRemoveButtonBar 
-                addFunction={addStation}
+                addFunction={()=>addStation(uuidv4())}
                 removeFunction={removeStation}
                 marginLeft={500} 
                 marginTop={10}
@@ -59,6 +86,7 @@ export default function FormProfile() {
             <Button type='submit' variant="contained" color="primary">
                     Next  <i className="material-icons">navigate_next</i>
             </Button>
+            </form>
         </FormWraper>
     )
 }

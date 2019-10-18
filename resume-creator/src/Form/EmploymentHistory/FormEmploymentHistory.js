@@ -3,9 +3,6 @@ import Button from '@material-ui/core/Button';
 import FormWraper from '../FormWraper'
 import WorkPlace from './WorkPlaces/WorkPlace'
 import uuidv4 from 'uuid/v4';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
 import {card_lg} from '../../consts';
 import AddRemoveButtonBar from '../AddRemoveButtonBar';
 

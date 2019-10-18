@@ -17,12 +17,6 @@ function FormBirthAndNationalityDetails(props) {
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        let tempLangs = [];
-        // for(var key in Languages){
-        //     tempLangs.push(Languages[key]);
-        // }
-        // tempLangs=[...tempLangs]
-        console.log(tempLangs)
         next();
         console.log(info)
     }
@@ -112,16 +106,14 @@ function FormBirthAndNationalityDetails(props) {
                 <Typography variant='caption' >
                     Name your languages and choose the level of control.
                 </Typography>
-                {
-                    lanCounter.map(id=>(
+                { lanCounter.map(id=>(
                         <Skill 
                             id={id} 
                             key={id}
                             onTypeChange={onTypeChange} 
                             onLevelChange={onLevelChange}
                             removeLanguage={removeLanguage}
-                        />
-                    ))
+                        />))
                 }
                 
             </li>
