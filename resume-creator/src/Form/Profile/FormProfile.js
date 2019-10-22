@@ -7,7 +7,15 @@ import Button from '@material-ui/core/Button';
 import uuidv4 from 'uuid/v4'
 import Station from './Station';
 
+
+/**
+ * gets from the user:
+ * 
+ *  - bio
+ *  - stations
+ */
 export default function FormProfile(props) {
+    const {context} = props;
     const firstId = 'firstId';
     const secondId = 'secondId';
     const [info, setInfo] = useState({
@@ -18,10 +26,11 @@ export default function FormProfile(props) {
         },
     })
     const next = () =>{
-        props.history.push('/form/Projects');
+        props.history.push('/Resume');
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        context.setProfile(info)
         next();
         console.log(info)
     }

@@ -6,7 +6,13 @@ import uuidv4 from 'uuid/v4';
 import {card_lg} from '../../consts';
 import AddRemoveButtonBar from '../AddRemoveButtonBar';
 
+/**
+ * gets from the user:
+ * 
+ *  - employment history
+ */
 function FormEmploymentHistory(props) {
+    const {context} = props;
     const firstId='firstId';
     const [info , setInfo] = useState({
         firstId : {
@@ -20,11 +26,12 @@ function FormEmploymentHistory(props) {
         firstId,
     ]);
     const next = () =>{
+        //props.history.push('/Resume')
         props.history.push('/form/EducationDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(info);
+        context.setEmploymentHistory(info)
         next();
     }
     const addNewWorkPlace = (id) =>{

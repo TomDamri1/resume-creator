@@ -4,14 +4,25 @@ import Button from '@material-ui/core/Button';
 import FormWraper from '../FormWraper'
 import CommunicationDetails from './hooks/CommunicationDetails';
 
+/**
+ * gets from the user:
+ * 
+ *  - phoneNumber
+ *  - Country
+ *  - City
+ *  - streetAddress
+ */
 function FormCommunicationDetails(props) {
+    const {context} = props;
+    console.log(context);
     const [info , setInfo] = CommunicationDetails();
     const next = () =>{
-        
+        //props.history.push('/Resume')
         props.history.push('/form/BirthAndNationalityDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        context.setCommunicationDetails(info);
         console.log(info);
         next();
     }

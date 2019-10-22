@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import {Route , Switch} from 'react-router-dom';
+
+//Context
+import {MyContext , MyProvider } from './Context/Context';
+
+//My Components
 import FormBasicDetails from './Form/BasicDetails/FormBasicDetails';
 import GetStarted from './Form/GetStarted';
 import CommunicationDetails from './Form/CommunicationDetails/FormCommunicationDetails';
@@ -9,63 +14,66 @@ import ExperienceDetails from './Form/EmploymentHistory/FormEmploymentHistory';
 import EducationDetails from './Form/Education/FormEducationDetails';
 import Skills from './Form/Skills/FormSkills';
 import Profile from './Form/Profile/FormProfile';
+import Resume from './Resume/Resume';
+
 
 function App() {
+    const context = useContext(MyContext);
   return (
     <div className="App">
         <Switch>
           <Route
               exact path='/' 
               render={(props)=> 
-                <GetStarted {...props}/>
+                <GetStarted {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/basicDetails' 
               render={(props)=> 
-                  <FormBasicDetails {...props}/>
+                  <FormBasicDetails {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/CommunicationDetails' 
               render={(props)=> 
-                  <CommunicationDetails {...props}/>
+                  <CommunicationDetails {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/BirthAndNationalityDetails' 
               render={(props)=> 
-                  <BirthAndNationalityDetails {...props}/>
+                  <BirthAndNationalityDetails {...props} context={context}/>
               }
           />
            <Route 
               exact path='/form/EmploymentHistory' 
               render={(props)=> 
-                  <ExperienceDetails {...props}/>
+                  <ExperienceDetails {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/EducationDetails' 
               render={(props)=> 
-                  <EducationDetails {...props}/>
+                  <EducationDetails {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/Skills' 
               render={(props)=> 
-                  <Skills {...props}/>
+                  <Skills {...props} context={context}/>
               }
           />
           <Route 
               exact path='/form/Profile' 
               render={(props)=> 
-                  <Profile {...props}/>
+                  <Profile {...props} context={context}/>
               }
           />
           <Route 
-              exact path='/tryThings' 
+              exact path='/Resume' 
               render={(props)=> 
-                 <h1>trying</h1>
+                 <Resume {...props} context={context}/>
               }
           />
         </Switch> 

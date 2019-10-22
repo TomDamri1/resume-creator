@@ -8,7 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
+/**
+ * gets from the user:
+ * 
+ *  - skills
+ */
 function FormBirthAndNationalityDetails(props) {
+    const {context} = props;
     const firstId='firstId'
     const [skillCounter , setSkillCounter] = useState([firstId])
     const [info , setInfo] = useState({
@@ -18,10 +24,12 @@ function FormBirthAndNationalityDetails(props) {
         }
     });
     const next = () =>{
+        //props.history.push('/Resume')
         props.history.push('/form/Profile');
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        context.setSkills(info)
         next();
         console.log(info)
     }

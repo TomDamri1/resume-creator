@@ -8,15 +8,26 @@ import uuidv4 from  'uuid/v4';
 import Typography from '@material-ui/core/Typography';
 import AddRemoveButtonBar from '../AddRemoveButtonBar';
 
+/**
+ * gets from the user:
+ * 
+ *  - birthdate
+ *  - birthPlace
+ *  - nationality
+ *  - languages
+ */
 function FormBirthAndNationalityDetails(props) {
+    const {context} = props;
     const [lanCounter , setlanCounter] = useState([])
     const [info , setInfo] = BirthAndNationalityDetails();
     const [Languages , setLanguages] = useState({})
     const next = () =>{
+        //props.history.push('/Resume')
         props.history.push('/form/EmploymentHistory');
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        context.setBirthAndNationalityDetails(info);
         next();
         console.log(info)
     }

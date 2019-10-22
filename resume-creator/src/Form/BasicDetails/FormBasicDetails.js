@@ -1,20 +1,29 @@
 import React from 'react'
+
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import BasicDetails from './hooks/BasicDetails';
 import FormWraper from '../FormWraper'
 
-
+/**
+ * gets from the user:
+ * 
+ *  - firstName
+ *  - lastName
+ *  - email
+ *  - jobTitle
+ */
 function FormBasicDetails (props){
+    const {context} = props;
+    console.log(context)
     const [info , setInfo] = BasicDetails();
-    const next = () =>{
-        // let _history = createBrowserHistory();
-        // _history.push('/form/CommunicationDetails')
+    const next = () => {
+        //props.history.push('/Resume')
         props.history.push('/form/CommunicationDetails')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(info);
+        context.setBasicDetails(info);
         next();
     }
     const handleChange= (e) => {
@@ -82,4 +91,5 @@ function FormBasicDetails (props){
 }
 
 
-export default FormBasicDetails
+
+export default (FormBasicDetails);

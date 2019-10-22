@@ -7,7 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
+/**
+ * gets from the user:
+ * 
+ *  - education
+ */
 export default function FormEducationDetails(props) {
+    const {context} = props;
     const firstId='firstId';
     const [educationCounter, setEducationCounter] = useState([firstId])
     const [info, setInfo] = useState({
@@ -20,10 +26,12 @@ export default function FormEducationDetails(props) {
         }
     });
     const next = () =>{
+        //props.history.push('/Resume')
         props.history.push('/form/Skills')
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
+        context.setEducationDetails(info)
         console.log(info);
         next();
     }
