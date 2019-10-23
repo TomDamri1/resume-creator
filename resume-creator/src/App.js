@@ -15,6 +15,7 @@ import EducationDetails from './Form/Education/FormEducationDetails';
 import Skills from './Form/Skills/FormSkills';
 import Profile from './Form/Profile/FormProfile';
 import Resume from './Resume/Resume';
+import MyPdf from './pdf/MyPdf'
 
 
 function App() {
@@ -71,9 +72,9 @@ function App() {
               }
           />
           <Route 
-              exact path='/Resume' 
+              exact path='/GetResumePDF' 
               render={(props)=> 
-                 <Resume {...props} context={context}/>
+                 <MyPdf {...props} context={context}/>
               }
           />
         </Switch> 

@@ -26,7 +26,7 @@ export default function FormProfile(props) {
         },
     })
     const next = () =>{
-        props.history.push('/Resume');
+        props.history.push('/GetResumePDF');
     }
     const handleSubmit = (e) =>{
         e.preventDefault();

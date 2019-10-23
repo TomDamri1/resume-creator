@@ -22,9 +22,9 @@ export default function Resume(props) {
         } = context.state;
     console.log(profile)
     return (
-
         <div>
-            
+            <h1>Tom Damri</h1>
+
         </div>
     )
 }
@@ -47,3 +47,14 @@ export default function Resume(props) {
 
 //profile
 //<Profile profile={profile}/>
+
+/* all together
+<Header basicDetails={basicDetails} communicationDetails={communicationDetails}/>
+<Languages birthAndNationalityDetails={birthAndNationalityDetails}/>
+<EmploymentHistory employmentHistory={employmentHistory}/>
+<Education educationDetails={educationDetails}/>
+<Education educationDetails={educationDetails}/>
+<Skills skills={skills}/>
+<Profile profile={profile}/>
+
+*/
