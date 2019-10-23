@@ -1,7 +1,17 @@
 import React from 'react'
+import SideBarHeader from '../SideBarHeader'
 
 export default function Skills(props) {
-    const {skills} = props;
+    return(
+        <div>
+            <SideBarHeader text='Skills'/>
+        </div>
+    )
+}
+
+/**
+ * 
+ const {skills} = props;
     let skillList = [];
     for (const key in skills) {
         if (skills.hasOwnProperty(key)) {
@@ -21,4 +31,4 @@ export default function Skills(props) {
             }
         </div>
     )
-}
+ */

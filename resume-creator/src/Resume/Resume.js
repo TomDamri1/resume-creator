@@ -2,14 +2,16 @@ import React from 'react'
 
 //my components
 import Header from './Header/Header'
-import Languages from './SideBar/Languages/Languages'
-import EmploymentHistory from './EmploymentHistory/EmploymentHistory'
-import Education from './Education/Education'
-import Skills from './Skills/Skills'
-import Profile from './Profile/Profile'
+import SideBar from './SideBar/SideBar'
+import Main from './Main/Main'
+
+//styles
+import useStyles from './ResumeStyles';
 
 
 export default function Resume(props) {
+    const classes = useStyles();
+    console.log(classes)
     const {context} = props;
     const {
             basicDetails, 
@@ -22,8 +24,19 @@ export default function Resume(props) {
         } = context.state;
     console.log(profile)
     return (
-        <div>
-            <h1>Tom Damri</h1>
+        <div className={classes.root} >
+            <div className={classes.header}>
+                <Header basicDetails={basicDetails} communicationDetails={communicationDetails}/>
+            </div>
+            <div className={classes.sideBar}>
+               <SideBar/>
+            </div>
+            <div className={classes.mainBar}>
+                <Main/>
+            </div>
+            <div className={classes.footer}>
+                Footer
+            </div>
 
         </div>
     )

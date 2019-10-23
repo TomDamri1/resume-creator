@@ -1,7 +1,20 @@
 import React from 'react'
+import MainHeader from '../MainHeader'
+import employmentHistory from '../icons/employmentHistory.png';
 
 export default function EmploymentHistory(props) {
-    const {employmentHistory} = props;
+    return(
+        <div>
+            <MainHeader img={employmentHistory} text={'EMPLOYMENT HISTORY'}/>
+        </div>
+    )
+    
+}
+
+
+/**
+ * 
+ const {employmentHistory} = props;
     const employmentHistoryList = [];
     for (const key in employmentHistory) {
         if (employmentHistory.hasOwnProperty(key)) {
@@ -22,4 +35,4 @@ export default function EmploymentHistory(props) {
             }
         </div>
     )
-}
+ */

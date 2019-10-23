@@ -1,7 +1,43 @@
 import React from 'react'
-
+import icon from '../icons/profile.png'
+import MainHeader from '../MainHeader'
+/**
+ * 
+ * @param {*} props 
+ */
 export default function Profile(props) {
-    const {profile} = props;
+    return(
+        <div>
+            <MainHeader img={icon} text='PROFILE'/>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * functional profile:
+
+ const {profile} = props;
     const {bio , stations} = profile;
     let stationList = [];
     for (const key in stations) {
@@ -23,4 +59,9 @@ export default function Profile(props) {
             }
         </div>
     )
-}
+
+
+
+
+
+ */

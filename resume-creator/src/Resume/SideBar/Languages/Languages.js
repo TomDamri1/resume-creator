@@ -1,7 +1,17 @@
 import React from 'react'
-
+import SideBarHeader from '../SideBarHeader'
 export default function Languages(props) {
-    const {birthAndNationalityDetails} = props;
+    return(
+        <div>
+            <SideBarHeader text='Languages'/>
+        </div>
+    )
+}
+
+
+/**
+ * 
+ const {birthAndNationalityDetails} = props;
     const {languages} = birthAndNationalityDetails;
     let lanList = [];
     for (const key in languages) {
@@ -22,4 +32,4 @@ export default function Languages(props) {
             }
         </div>
     )
-}
+ */

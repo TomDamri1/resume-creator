@@ -1,7 +1,19 @@
 import React from 'react'
+import education from '../icons/education.png'
+import MainHeader from '../MainHeader'
 
 export default function Education(props) {
-    const {educationDetails} = props;
+    return(
+        <div>
+            <MainHeader img={education} text={'EDUCATION'}/>
+        </div>
+    )
+}
+
+
+/**
+ 
+const {educationDetails} = props;
     let educationList =[];
     for (const key in educationDetails) {
         if (educationDetails.hasOwnProperty(key)) {
@@ -23,4 +35,6 @@ export default function Education(props) {
             }
         </div>
     )
-}
+
+
+ */
