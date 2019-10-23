@@ -29,7 +29,12 @@ export default function Resume(props) {
                 <Header basicDetails={basicDetails} communicationDetails={communicationDetails}/>
             </div>
             <div className={classes.sideBar}>
-               <SideBar/>
+               <SideBar 
+                    basicDetails={basicDetails} 
+                    communicationDetails={communicationDetails} 
+                    birthAndNationalityDetails={birthAndNationalityDetails}
+                    skills={skills}
+                />
             </div>
             <div className={classes.mainBar}>
                 <Main/>

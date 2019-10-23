@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const [detailsSize , skillSize, langSize] = [5,9,2]
 const useStyles = makeStyles({
     root: {
-        paddingLeft:'3em',
+        paddingLeft:'2em',
         backgroundColor: '#fce1a9',
         margin:'auto',
         height:'100%',

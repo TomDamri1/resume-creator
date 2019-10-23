@@ -1,17 +1,9 @@
 import React from 'react'
 import SideBarHeader from '../SideBarHeader'
+import SkillBar from './SkillBar/SkillBar'
 
 export default function Skills(props) {
-    return(
-        <div>
-            <SideBarHeader text='Skills'/>
-        </div>
-    )
-}
-
-/**
- * 
- const {skills} = props;
+    const {skills} = props;
     let skillList = [];
     for (const key in skills) {
         if (skills.hasOwnProperty(key)) {
@@ -19,16 +11,42 @@ export default function Skills(props) {
             skillList.push(element)
         }
     }
-    return (
+    console.log(skillList)
+    /*
+    skillList = [
+        {type: 'Java' , level:'80'},
+        {type: 'Python' , level:'80'},
+        {type: 'Windows' , level:'80'},
+        {type: 'Java' , level:'80'},
+        {type: 'Python' , level:'80'},
+        {type: 'Windows' , level:'80'},
+        {type: 'Java' , level:'80'},
+        {type: 'Python' , level:'80'},
+        {type: 'Windows' , level:'80'},
+    ]
+    */
+    return(
         <div>
-            {
+            <div>
+                <SideBarHeader text='Skills'/>
+            </div>
+            <div style={{  
+                marginRight:20,
+                display: 'flex',
+                flexDirection: 'column',
+                flexBasis: '100%',
+                flex: 1,
+                alignItems:'center',
+                }}>
+
+                {
                 skillList.map(skill => (
-                    <li>
-                        type  : {skill.type} <br/>
-                        level : {skill.level}
-                    </li>
+                    <SkillBar type={skill.type} level={skill.level}/>
                 ))
-            }
+                }
+                
+            </div>
         </div>
     )
- */
+}
+

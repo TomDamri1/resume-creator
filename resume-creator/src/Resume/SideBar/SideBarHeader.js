@@ -6,8 +6,6 @@ const iconStyle ={
     marginTop:28,
     borderRadius:'50%',
     border:'1px solid black',
-    
-    
 }
 const iconStyleLeft ={
     width:5,
@@ -16,17 +14,13 @@ const iconStyleLeft ={
     marginTop:28,
     marginLeft:60,
     borderRadius:'50%',
-    border:'1px solid black',
-    
-    
+    border:'1px solid black',  
 }
 const containerStyle={
     display:'flex',
     justifyContent:'spcae-between',
     marginLeft:-10,
     marginTop:-10
-    
-    
 }
 
 
