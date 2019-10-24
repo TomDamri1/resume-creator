@@ -10,7 +10,7 @@ import Main from './Main/Main'
 
 //styles
 import useStyles from './ResumeStyles';
-
+import isDemo from './constDemo';
 
 export default function Resume(props) {
     const classes = useStyles();
@@ -25,7 +25,7 @@ export default function Resume(props) {
         skills,
         profile,
     } = demo;
-    /*
+    if(!isDemo){
     const {
             basicDetails, 
             communicationDetails ,
@@ -35,7 +35,7 @@ export default function Resume(props) {
             skills,
             profile,
         } = context.state;
-    */
+    }
         
     console.log(profile)
     return (

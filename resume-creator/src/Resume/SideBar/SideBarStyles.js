@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import isDemo from '../constDemo'
 /**
  * 
  * gets the amount of skills and lanuagages
@@ -8,7 +9,7 @@ const [detailsSize , skillSize, langSize] = [3,4,3]
 const useStyles = makeStyles({
     root: {
         paddingLeft:'2em',
-        backgroundColor: '#fce1a9',
+        backgroundColor:!isDemo? '#fce1a9':'white',
         margin:'auto',
         height:'100%',
         width:'100%',
@@ -18,14 +19,14 @@ const useStyles = makeStyles({
         gridGap:'1em',
     },
     details:{
-        backgroundColor:'#e3c588',
+        backgroundColor:!isDemo?'#e3c588':'white',
         alignItems:'center'
     },
     skills:{
-        backgroundColor:'#ad9565',
+        backgroundColor:!isDemo?'#ad9565':'white',
     },
     languages:{
-        backgroundColor:'#d6a84b',
+        backgroundColor:!isDemo?'#d6a84b':'white',
     },
 
 
