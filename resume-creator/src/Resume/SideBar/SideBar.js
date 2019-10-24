@@ -27,7 +27,7 @@ export default function SideBar(props) {
                 <Skills skills={skills}/>
             </div>
             <div className={classes.languages}>
-                <Languages/>
+                <Languages birthAndNationalityDetails={birthAndNationalityDetails}/>
             </div>
         </div>
     )

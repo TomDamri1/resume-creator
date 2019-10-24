@@ -37,7 +37,11 @@ export default function Resume(props) {
                 />
             </div>
             <div className={classes.mainBar}>
-                <Main/>
+                <Main 
+                    profile={profile} 
+                    employmentHistory={employmentHistory} 
+                    educationDetails={educationDetails}
+                />
             </div>
             <div className={classes.footer}>
                 Footer
