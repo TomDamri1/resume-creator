@@ -1,5 +1,8 @@
 import React from 'react'
 
+//demo
+import demo from './demoResume'
+
 //my components
 import Header from './Header/Header'
 import SideBar from './SideBar/SideBar'
@@ -14,6 +17,16 @@ export default function Resume(props) {
     console.log(classes)
     const {context} = props;
     const {
+        basicDetails, 
+        communicationDetails ,
+        birthAndNationalityDetails , 
+        employmentHistory ,
+        educationDetails ,  
+        skills,
+        profile,
+    } = demo;
+    /*
+    const {
             basicDetails, 
             communicationDetails ,
             birthAndNationalityDetails , 
@@ -22,6 +35,8 @@ export default function Resume(props) {
             skills,
             profile,
         } = context.state;
+    */
+        
     console.log(profile)
     return (
         <div className={classes.root} >

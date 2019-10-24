@@ -1,0 +1,23 @@
+body {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+
+li{
+    list-style-type: none;
+}
+
+li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 5px;
+    margin-top: 7px;
+    margin-left: -24px;
+    height: 5px;
+    z-index: 400;
+  }

@@ -5,13 +5,12 @@ const mainSize = 4
 const useStyles = makeStyles({
     root: {
         backgroundColor: '#bec0ed',
-        margin:'auto',
         height:'100%',
         width:'100%',
         display:'grid',
         gridTemplateColumns: `${sidebarSize}fr ${mainSize}fr`,
         gridGap:'1em',
-        gridTemplateRows: '2fr 12fr 2fr'
+        
     },
     header:{
         backgroundColor:'#9fa2ed',

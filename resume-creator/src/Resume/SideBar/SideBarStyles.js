@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
  * gets the amount of skills and lanuagages
  * returns makeStyles funcion based on it.
  */
-const [detailsSize , skillSize, langSize] = [5,9,2]
+const [detailsSize , skillSize, langSize] = [3,4,3]
 const useStyles = makeStyles({
     root: {
         paddingLeft:'2em',

@@ -1,6 +1,7 @@
 import React from 'react'
 import MainHeader from '../MainHeader'
 import employmentHistoryPic from '../icons/employmentHistory.png';
+import './EmploymentHistory.css'
 
 export default function EmploymentHistory(props) {
     const {employmentHistory} = props
@@ -14,14 +15,15 @@ export default function EmploymentHistory(props) {
     }
     
     return(
-        <div>
+        <div style={{textAlign:'left', padding:10}}>
             <MainHeader img={employmentHistoryPic} text={'EMPLOYMENT HISTORY'}/>
-            <p>
+            <p style={{borderLeft:'2px solid black', marginLeft:25}}>
             {
                 employmentHistoryList.map(item => (
-                    <li>
-                        {item.title} at {item.place}.<br/>
-                        {item.start} - {item.end}
+
+                    <li style={{fontWeight:'bold', marginLeft:20}}>
+                        {item.title} at {item.place}
+                        <section style={{fontWeight:'100'}}>{item.start} - {item.end}</section>
                     </li>
                 ))
             }

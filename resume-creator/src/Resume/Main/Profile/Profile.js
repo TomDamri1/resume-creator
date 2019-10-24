@@ -16,20 +16,24 @@ export default function Profile(props) {
         }
     }
     return(
-        <div>
+        <div style={{textAlign:'left' ,padding:10}}>
             <MainHeader img={icon} text='PROFILE'/>
-            <p>
+            <div style={{borderLeft:'2px solid black' ,marginLeft:30}}>
+            <p style={{marginLeft:40}}>
                 {bio}
             </p>
-            <p>
+            <ul style={{marginLeft:20 }}>
             {
+                
                 stationList.map(station =>(
-                    <li>
+                    <li style={{listStylePosition:'outside'}}>
                         {station}
                     </li>
                 ))
+            
             }
-            </p>
+            </ul>
+            </div>
 
         </div>
     )

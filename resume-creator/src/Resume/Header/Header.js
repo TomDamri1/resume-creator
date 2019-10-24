@@ -16,8 +16,7 @@ export default function Header(props) {
     return (
         <div>
             <h1>{basicDetails.firstName} {basicDetails.lastName}</h1>
-            <p>{basicDetails.email} {basicDetails.jobTitle}</p>
-            <p>{communicationDetails.phoneNumber}</p>
+            <p>{basicDetails.jobTitle}    |    {communicationDetails.phoneNumber}</p>
         </div>
     )
 }

@@ -14,11 +14,20 @@ export default function Languages(props) {
     return(
         <div>
             <SideBarHeader text='Languages'/>
+            <div style={{  
+                marginRight:20,
+                display: 'flex',
+                flexDirection: 'column',
+                flexBasis: '100%',
+                flex: 1,
+                alignItems:'center',
+                }}>
             {
                 lanList.map(lan => (
                     <SkillBar type={lan.type} level={lan.level} />
                 ))
             }
+            </div>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
  * gets the amount of skills and lanuagages
  * returns makeStyles funcion based on it.
  */
-const [profileSize , historySize, educationSize] = [5,4,5]
+const [profileSize , historySize, educationSize] = [4,3,5]
 const useStyles = makeStyles({
     root: {
         

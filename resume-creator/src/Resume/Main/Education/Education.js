@@ -12,14 +12,14 @@ export default function Education(props) {
         }
     }
     return(
-        <div>
+        <div style={{textAlign:'left', padding:10}}>
             <MainHeader img={education} text={'EDUCATION'}/>
-            <p>
+            <p style={{borderLeft:'2px solid black', marginLeft:25}}>
             {
                 educationList.map(item => (
-                    <li>
-                        {item.title}, {item.place}<br/>
-                        {item.start} - {item.end}<br/>
+                    <li style={{fontWeight:'bold', marginLeft:20}}>
+                        {item.title}, {item.place}
+                        <section style={{ fontWeight:'100'}}>{item.start} - {item.end}</section>
                         Degree: {item.degree}
                     </li>
                 ))

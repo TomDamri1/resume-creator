@@ -5,6 +5,7 @@ import Profile from './Profile/Profile'
 import EmploymentHistory from './EmploymentHistory/EmploymentHistory'
 import Education from './Education/Education'
 
+
 export default function Main(props) {
     const {profile , employmentHistory , educationDetails} = props;
     const classes = useStyles();
