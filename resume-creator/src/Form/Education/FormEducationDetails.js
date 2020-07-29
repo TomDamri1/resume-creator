@@ -82,6 +82,7 @@ export default function FormEducationDetails(props) {
                 </Button>
             </li>
         </form>
+        <Button onClick={() => { alert(JSON.stringify(info)) }}>show state</Button>
         </FormWraper>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import uuidv4 from 'uuid/v4';
 
 //demo
 import demo from './demoResume'
@@ -45,6 +46,7 @@ export default function Resume(props) {
             </div>
             <div className={classes.sideBar}>
                <SideBar 
+                    key = {uuidv4()}
                     basicDetails={basicDetails} 
                     communicationDetails={communicationDetails} 
                     birthAndNationalityDetails={birthAndNationalityDetails}
@@ -53,45 +55,17 @@ export default function Resume(props) {
             </div>
             <div className={classes.mainBar}>
                 <Main 
+                    key = {uuidv4()}
                     profile={profile} 
                     employmentHistory={employmentHistory} 
                     educationDetails={educationDetails}
                 />
             </div>
             <div className={classes.footer}>
-                Footer
+                
             </div>
 
         </div>
     )
 }
 
-
-//header
-//<Header basicDetails={basicDetails} communicationDetails={communicationDetails}/>
-
-//langs
-//<Languages birthAndNationalityDetails={birthAndNationalityDetails}/>
-
-//emphistory
-//<EmploymentHistory employmentHistory={employmentHistory}/>
-
-//education
-//<Education educationDetails={educationDetails}/>
-
-//skills
-//<Skills skills={skills}/>
-
-//profile
-//<Profile profile={profile}/>
-
-/* all together
-<Header basicDetails={basicDetails} communicationDetails={communicationDetails}/>
-<Languages birthAndNationalityDetails={birthAndNationalityDetails}/>
-<EmploymentHistory employmentHistory={employmentHistory}/>
-<Education educationDetails={educationDetails}/>
-<Education educationDetails={educationDetails}/>
-<Skills skills={skills}/>
-<Profile profile={profile}/>
-
-*/

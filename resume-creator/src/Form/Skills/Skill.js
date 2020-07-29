@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from '@material-ui/core/Slider';
 import { TextField } from '@material-ui/core';
 import useSkill from '../../hooks/useSkill';
 function Skill(props) {
-    const [skill , setSkill] = useSkill();
-    const handleChange= (e) => {
-        setSkill({...skill , 
-            [e.target.name] : e.target.value,});
-        props.onTypeChange(props.id , e.target.value)
-        console.log(e.target.value)
+    const [name, setName] = useState('')
+    const [level, setLevel] = useState(0)
+    useEffect(() => {
+        console.log("effected")
+        props.handleChange(props.id, { type: name, level: level })
+    }, [name, level])
+
+    const handleChange = (e) => {
+        console.log("x")
+        setName(e.target.value);
     }
-    const handleLevelChange = (e,val) => {
-        setSkill({...skill , 
-            level : val});
-        props.onLevelChange(props.id , val)
+    const handleLevelChange = (e, val) => {
+        console.log("x")
+        setLevel(val);
+        console.log(val)
     }
     return (
-        <div style={{marginTop:'1em'}}>
+        <div style={{ marginTop: '1em' }}>
             <TextField
                 name='type'
                 id="outlined-type"
                 label={props.label}
                 margin="normal"
-                value={skill.type}
+                value={name}
                 onChange={handleChange}
             />
             <Slider
@@ -33,12 +37,12 @@ function Skill(props) {
                 getAriaValueText={(valuetext) => (valuetext)}
                 aria-labelledby="discrete-slider-always"
                 step={1}
-                color={skill.used ? 'primary' : 'secondary'}
+                color={level !== 0  ? 'primary' : 'secondary'}
                 valueLabelDisplay='on'
-                style={{marginTop:'30px', marginLeft:'15px', width: 200}}
+                style={{ marginTop: '30px', marginLeft: '15px', width: 200 }}
             />
-            
-            
+
+
         </div>
     )
 }

@@ -47,7 +47,6 @@ function FormEmploymentHistory(props) {
         setWorkPlacesCounter([...tempWorkPlacesCounter]);
     }
     const handleTypeChange = (id , obj) => {
-        console.log(info);
         setInfo({...info , [id] : obj });
         console.log(info);
     }
@@ -77,7 +76,7 @@ function FormEmploymentHistory(props) {
                 </Button>
             </li>
         </form>
-        <Button onClick={() => {alert(JSON.stringify(info))}}>XXXX</Button>
+        <Button onClick={() => { alert(JSON.stringify(info)) }}>show state</Button>
         </FormWraper>
     )
 }

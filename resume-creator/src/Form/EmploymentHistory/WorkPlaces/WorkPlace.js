@@ -10,6 +10,7 @@ function WorkPlace(props) {
         console.log(workPlace)
         props.handleTypeChange(props.id , workPlace);
     }, [workPlace])
+    
     const handleChange= (e) => {
         setWorkPlace({...workPlace , 
             [e.target.name] : e.target.value,});

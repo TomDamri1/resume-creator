@@ -1,6 +1,7 @@
 import React from 'react'
 import education from '../icons/education.png'
 import MainHeader from '../MainHeader'
+import uuidv4 from 'uuid/v4'
 
 export default function Education(props) {
     const {educationDetails} = props;
@@ -14,10 +15,10 @@ export default function Education(props) {
     return(
         <div style={{textAlign:'left', padding:10}}>
             <MainHeader img={education} text={'EDUCATION'}/>
-            <p style={{borderLeft:'2px solid black', marginLeft:25}}>
+            <p key = {uuidv4()} style={{borderLeft:'2px solid black', marginLeft:25}}>
             {
                 educationList.map(item => (
-                    <li style={{fontWeight:'bold', marginLeft:20}}>
+                    <li key={uuidv4()} style={{fontWeight:'bold', marginLeft:20}}>
                         {item.title}, {item.place}
                         <section style={{ fontWeight:'100'}}>{item.start} - {item.end}</section>
                         Degree: {item.degree}

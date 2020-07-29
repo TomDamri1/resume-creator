@@ -1,17 +1,10 @@
 import React from 'react'
 import SideBarHeader from '../SideBarHeader'
 import SkillBar from './SkillBar/SkillBar'
+import uuidv4 from 'uuid/v4'
 
 export default function Skills(props) {
     const {skills} = props;
-    let skillList = [];
-    for (const key in skills) {
-        if (skills.hasOwnProperty(key)) {
-            const element = skills[key];
-            skillList.push(element)
-        }
-    }
-    console.log(skillList)
     /*
     skillList = [
         {type: 'Java' , level:'80'},
@@ -40,8 +33,8 @@ export default function Skills(props) {
                 }}>
 
                 {
-                skillList.map(skill => (
-                    <SkillBar type={skill.type} level={skill.level}/>
+                skills.map(skill => (
+                    <SkillBar key={uuidv4()} type={skill.skillName} level={skill.skillLevel}/>
                 ))
                 }
                 

@@ -96,6 +96,7 @@ export default function FormProfile(props) {
                     Next  <i className="material-icons">navigate_next</i>
             </Button>
             </form>
+            <Button onClick={() => { alert(JSON.stringify(info)) }}>show state</Button>
         </FormWraper>
     )
 }

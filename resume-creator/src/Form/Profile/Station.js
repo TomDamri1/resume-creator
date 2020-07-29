@@ -4,6 +4,7 @@ export default function Station(props) {
     const handleStationChange = (e) => {
         props.handleStationChange(props.id,e.target.value);
     }
+    
     return (
         <TextField
             id={props.station}

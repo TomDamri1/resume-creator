@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Button from '@material-ui/core/Button';
 import FormWraper from '../FormWraper'
 import Skill from '../Skills/Skill';
-import uuidv4 from  'uuid/v4';
+import uuidv4 from 'uuid/v4';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
@@ -14,6 +14,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
  *  - skills
  */
 function FormBirthAndNationalityDetails(props) {
+    /*
     const {context} = props;
     const firstId='firstId'
     const [skillCounter , setSkillCounter] = useState([firstId])
@@ -62,43 +63,82 @@ function FormBirthAndNationalityDetails(props) {
         setInfo({...tempInfo});
         setSkillCounter([...skillCounter]);
     }
-    const title='Skills';
-    const header='Enter your Skills and your Skill level'
+    */
+    const { context } = props;
+    const [info, setInfo] = useState([{ id: uuidv4(), skillName: '', skillLevel: 0 }]);
+    const next = () => {
+        //props.history.push('/Resume')
+        props.history.push('/form/Profile');
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        context.setSkills(info)
+        next();
+        console.log(info)
+    }
+    const handleChange = (e) => {
+        setInfo({
+            ...info,
+            [e.target.name]: e.target.value
+        });
+    }
+    const addSkill = () => {
+        setInfo([...info, { id: uuidv4(), skillName: '', skillLevel: 0 }])
+    }
+    const handleSkillChange = (id, skill) => {
+        let newSkills = info;
+        for (let index = 0; index < info.length; index++) {
+            if (info[index].id === id) {
+                newSkills[index].skillName = skill.type;
+                newSkills[index].skillLevel = skill.level;
+            }
+        }
+        setInfo([...newSkills])
+    }
+
+    const removeSkill = () => {
+        const lastItemInTheArray = info.length - 1;
+        setInfo([...info.slice(0, lastItemInTheArray)])
+    }
+    const title = 'Skills';
+    const header = 'Enter your Skills and your Skill level'
     return (
         <FormWraper title={title} header={header}>
-        <form onSubmit={handleSubmit}>
-            <li>
-                <Typography variant='h6' style={{marginBottom : '2em'}}>
-                    Name your skill and choose it level
-                </Typography>
-                {
-                    skillCounter.map(id=>(
-                        <Skill id={id} 
-                            key={id}
-                            onTypeChange={onTypeChange} 
-                            onLevelChange={onLevelChange}
-                            removeSkill={removeSkill}
-                        />
-                    ))
-                }
-                
-            </li>
-            <li>
-                <div className='buttons-div' style={{marginLeft:200 , marginTop:10}}>
-                    <IconButton onClick={()=>addSkill(uuidv4())}>
-                        <AddIcon/>
-                    </IconButton>
-                    <IconButton onClick={removeSkill}>
-                        <RemoveIcon/>
-                    </IconButton>
-                </div>
-            </li>
-            <li>
-                <Button type='submit' variant="contained" color="primary">
-                    Next  <i className="material-icons">navigate_next</i>
-                </Button>
-            </li>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <ul>
+                    <li>
+                        <Typography variant='h6' style={{ marginBottom: '2em' }}>
+                            Name your skill and choose its level
+                        </Typography>
+                        {
+                            info.map(obj => (
+                                <Skill
+                                    id={obj.id}
+                                    key={obj.id}
+                                    handleChange={handleSkillChange}
+                                />)
+                            )
+                        }
+
+                    </li>
+                    <li>
+                        <div className='buttons-div' style={{ marginLeft: 200, marginTop: 10 }}>
+                            <IconButton onClick={() => addSkill()}>
+                                <AddIcon />
+                            </IconButton>
+                            <IconButton onClick={removeSkill}>
+                                <RemoveIcon />
+                            </IconButton>
+                        </div>
+                    </li>
+                    <li>
+                        <Button type='submit' variant="contained" color="primary">
+                            Next  <i className="material-icons">navigate_next</i>
+                        </Button>
+                    </li>
+                </ul>
+            </form>
+            <Button onClick={() => { alert(JSON.stringify(info)) }}>show state</Button>
         </FormWraper>
     )
 }

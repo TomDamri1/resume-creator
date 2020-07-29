@@ -10,7 +10,7 @@ const [profileSize , historySize, educationSize] = [4,3,5]
 const useStyles = makeStyles({
     root: {
         
-        backgroundColor: !isDemo?'#656694':'white',
+        backgroundColor:'white',
         margin:'auto',
         height:'100%',
         width:'100%',
@@ -20,14 +20,14 @@ const useStyles = makeStyles({
         gridGap:'1em',
     },
     profile:{
-        backgroundColor:!isDemo?'#7a56bf':'white',
+        backgroundColor:'white',
         alignItems:'center'
     },
     history:{
-        backgroundColor:!isDemo?'#8a6fbf':'white',
+        backgroundColor:'white',
     },
     education:{
-        backgroundColor:!isDemo?'#9984c2':'white',
+        backgroundColor:'white',
     },
 
 
