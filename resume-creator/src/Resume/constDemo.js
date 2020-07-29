@@ -1,3 +1,3 @@
-const isDemo = true;
+const isDemo = false;
 
 export default isDemo;

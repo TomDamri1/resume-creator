@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TextField, Typography } from '@material-ui/core';
 import useWorkPlace from '../hooks/useWorkPlace';
 
 function WorkPlace(props) {
     const [workPlace , setWorkPlace] = useWorkPlace();
+
+    useEffect(() => {
+        console.log("effected")
+        console.log(workPlace)
+        props.handleTypeChange(props.id , workPlace);
+    }, [workPlace])
     const handleChange= (e) => {
         setWorkPlace({...workPlace , 
             [e.target.name] : e.target.value,});
-
-        props.handleTypeChange(props.id , workPlace);
     }
     return (
         <>

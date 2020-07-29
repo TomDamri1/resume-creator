@@ -16,16 +16,16 @@ export default function Resume(props) {
     const classes = useStyles();
     console.log(classes)
     const {context} = props;
-    const {
-        basicDetails, 
-        communicationDetails ,
-        birthAndNationalityDetails , 
-        employmentHistory ,
-        educationDetails ,  
-        skills,
-        profile,
-    } = demo;
-    if(!isDemo){
+    // let {
+    //     basicDetails, 
+    //     communicationDetails ,
+    //     birthAndNationalityDetails , 
+    //     employmentHistory ,
+    //     educationDetails ,  
+    //     skills,
+    //     profile,
+    // } = demo;
+    // if(!isDemo){
     const {
             basicDetails, 
             communicationDetails ,
@@ -35,9 +35,9 @@ export default function Resume(props) {
             skills,
             profile,
         } = context.state;
-    }
-        
-    console.log(profile)
+    console.log("==================")    
+    console.log(context.state)
+    console.log("==================")    
     return (
         <div className={classes.root} >
             <div className={classes.header}>
