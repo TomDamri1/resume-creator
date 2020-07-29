@@ -8,3 +8,6 @@ No installation needed.
 simple resume creator,
 allows the user to fill in his details and download a styled resume.
 made with React Hooks.
+
+## Example:
+![alt text](https://github.com/tomdamri1/resume-creator/blob/master/resume-creator-example.jpg?raw=true)
